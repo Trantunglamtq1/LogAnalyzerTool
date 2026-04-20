@@ -40,10 +40,6 @@ namespace LogAnalyzerTool
             var parallelResult = parallelAnalyzer.Analyze(LogFilePath);
             sw.Stop();
             reportPrinter.Print("3. CHẾ ĐỘ PARALLEL (Đa luồng, Tận dụng CPU)", parallelResult, sw.ElapsedMilliseconds);
-
-            Console.WriteLine("\n🚀 KẾT LUẬN:");
-            Console.WriteLine("- Sync & Async: Thời gian chạy thường ngang ngửa nhau (vì cùng dùng 1 nhân CPU). Nhưng Async giúp Web Server không bị sập khi có nhiều người truy cập.");
-            Console.WriteLine("- Parallel: Thời gian chạy nhanh nhất (vắt kiệt CPU). Nhưng cân nhắc không dùng Parallel trên Web Server để tránh chiếm dụng CPU của các user khác!");
         }
     }
 }
